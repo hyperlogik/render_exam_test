@@ -5,7 +5,8 @@ from werkzeug.utils import secure_filename
 
 from ocr import transcribe
 
-app = Flask(__name__)
+# Explicitly declare the template folder location relative to this file's path
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), 'templates'))
 
 ALLOWED = (".pdf", ".png", ".jpg", ".jpeg")
 
